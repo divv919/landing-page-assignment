@@ -536,63 +536,18 @@ function App() {
                   className="aspect-2/3 rounded-2xl"
                   src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
                 ></img>
-                <div className="absolute w-full p-[16px]  flex -translate-x-1/2 bottom-1/14  left-1/2">
-                  <div className="w-full rounded-xl flex p-[16px] justify-between bg-white">
-                    <div className="flex flex-col justify-between">
-                      <div className="font-light text-[16px]">
-                        ALYA SKIN CLEANSER.
-                      </div>
-                      <div className="font-light text-[12px] text-greyish">
-                        FROM $29.99
-                      </div>
-                    </div>
-                    <div className="cursor-pointer flex justify-center items-center h-full aspect-square bg-neutral-200 rounded-xl hover:bg-neutral-300">
-                      <Cart />
-                    </div>
-                  </div>
-                </div>
               </div>
               <div className="relative w-1/13">
                 <img
                   className=" aspect-2/3 rounded-2xl"
                   src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
                 ></img>
-                <div className="absolute w-full p-[16px]  flex -translate-x-1/2 bottom-1/14  left-1/2">
-                  <div className="w-full rounded-xl flex p-[16px] justify-between bg-white">
-                    <div className="flex flex-col justify-between">
-                      <div className="font-light text-[16px]">
-                        RITUAL OF SAKURA.
-                      </div>
-                      <div className="font-light text-[12px] text-greyish">
-                        FROM $27.99
-                      </div>
-                    </div>
-                    <div className="cursor-pointer flex justify-center items-center h-full aspect-square bg-neutral-200 rounded-xl hover:bg-neutral-300">
-                      <Cart />
-                    </div>
-                  </div>
-                </div>
               </div>
               <div className="relative w-1/13">
                 <img
                   className=" rounded-2xl"
                   src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
                 ></img>
-                <div className="absolute w-full p-[16px]  flex -translate-x-1/2 bottom-1/14  left-1/2">
-                  <div className="w-full rounded-xl flex p-[16px] justify-between bg-white">
-                    <div className="flex flex-col justify-between">
-                      <div className="font-light text-[16px]">
-                        THE BODY LOTION.
-                      </div>
-                      <div className="font-light text-[12px] text-greyish">
-                        FROM $19.99
-                      </div>
-                    </div>
-                    <div className="cursor-pointer flex justify-center items-center h-full aspect-square bg-neutral-200 rounded-xl hover:bg-neutral-300">
-                      <Cart />
-                    </div>
-                  </div>
-                </div>
               </div>
               <div className="relative w-1/13 ">
                 <img
