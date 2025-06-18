@@ -3,7 +3,6 @@ import "./App.css";
 import { motion } from "motion/react";
 import {
   Bag,
-  Cart,
   Account,
   Heart,
   LeftFacingArrow,
