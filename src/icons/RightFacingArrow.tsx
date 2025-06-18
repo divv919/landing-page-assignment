@@ -1,16 +1,26 @@
 export const RightFacingArrow = () => {
   return (
     <svg
-      width="80"
-      height="80"
+      className=" transition-all duration-200 ease-in-out w-full aspect-square rotate-180 cursor-pointer hover:stroke-lightgreen hover:fill-darkgreen "
       viewBox="0 0 80 80"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path
-        d="M40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80Z"
-        fill="#2D3B36"
-      />
+      <g clip-path="url(#clip0_2603_55)">
+        <path
+          d="M40 79.5C61.8152 79.5 79.5 61.8152 79.5 40C79.5 18.1848 61.8152 0.5 40 0.5C18.1848 0.5 0.5 18.1848 0.5 40C0.5 61.8152 18.1848 79.5 40 79.5Z"
+          stroke="#2D3B36"
+        />
+        <path
+          d="M39.2929 39.2931C38.9024 39.6836 38.9024 40.3168 39.2929 40.7073L45.6569 47.0713C46.0474 47.4618 46.6805 47.4618 47.0711 47.0713C47.4616 46.6807 47.4616 46.0476 47.0711 45.6571L41.4142 40.0002L47.0711 34.3433C47.4616 33.9528 47.4616 33.3197 47.0711 32.9291C46.6805 32.5386 46.0474 32.5386 45.6569 32.9291L39.2929 39.2931ZM40 40.0002V41.0002H80V40.0002V39.0002H40V40.0002Z"
+          fill="#2D3B36"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_2603_55">
+          <rect width="80" height="80" fill="white" />
+        </clipPath>
+      </defs>
     </svg>
   );
 };

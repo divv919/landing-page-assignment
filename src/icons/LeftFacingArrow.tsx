@@ -1,8 +1,7 @@
 export const LeftFacingArrow = () => {
   return (
     <svg
-      width="80"
-      height="80"
+      className="transition-all duration-200 ease-in-out w-full aspect-square hover:stroke-lightgreen cursor-pointer hover:fill-darkgreen"
       viewBox="0 0 80 80"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
