@@ -87,14 +87,16 @@ function App() {
   const [activeIndex, setActiveIndex] = useState(-1);
   if (loading) {
     return (
-      <motion.div
-        initial={{ opacity: 0, transform: "translateY(8px)" }}
-        animate={{ opacity: 1, transform: "translateY(0px)" }}
-        transition={{ duration: 0.7, ease: "easeInOut" }}
-        className=" text-[18px] md:text-[24px] xl:text-[36px] text-darkgreen font-semibold tracking-tighter animate-pulse bg-lightgreen w-screen h-screen flex justify-center items-center"
-      >
-        Polishing your perfect skincare ritual
-      </motion.div>
+      <div className="w-screen h-screen overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, transform: "translateY(8px)" }}
+          animate={{ opacity: 1, transform: "translateY(0px)" }}
+          transition={{ duration: 0.7, ease: "easeInOut" }}
+          className=" text-[18px] md:text-[24px] xl:text-[36px] text-darkgreen font-semibold tracking-tighter animate-pulse bg-lightgreen w-full h-full flex justify-center items-center"
+        >
+          Polishing your perfect skincare ritual
+        </motion.div>
+      </div>
     );
   }
   return (
@@ -1327,7 +1329,7 @@ function App() {
             </div>
           </div>
 
-          <div className="pointer-events-none absolute -bottom-8 -left-4 md:-bottom-16 lg:-bottom-[140px] uppercase text-[90px] md:text-[170px] lg:text-[420px] font-black tracking-tighter opacity-10 leading-[1]">
+          <div className=" xl:font-bold pointer-events-none absolute -bottom-8 -left-4 md:-bottom-16 lg:-bottom-[140px] uppercase text-[90px] md:text-[170px] lg:text-[420px] font-black tracking-tighter  opacity-10 leading-[1]">
             Skincare
           </div>
         </footer>
