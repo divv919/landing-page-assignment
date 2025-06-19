@@ -904,7 +904,7 @@ function App() {
           whileInView={{ transform: "translateY(0px)", opacity: 100 }}
           transition={{ duration: 0.7, ease: "easeInOut" }}
           viewport={{ once: true }}
-          className="p-[30px]"
+          className="p-[30px] xl:p-[100px]"
         >
           <div className="flex flex-col xl:items-center gap-[36px] md:gap-[44px] xl:gap-[56px]">
             <p className="text-[34px] md:text-[50px] xl:w-150 xl:text-center xl:wrap-normal tracking-tighter leading-[1.25]">
