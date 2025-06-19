@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import { motion } from "motion/react";
 import {
@@ -9,6 +9,7 @@ import {
   RightFacingArrow,
   Award,
   Headset,
+  Cart,
 } from "./icons";
 import { Plus } from "./icons/Plus";
 import { Minus } from "./icons/Minus";
@@ -21,6 +22,17 @@ interface accordianType {
   answer: string;
 }
 function App() {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    window.addEventListener("load", async () => {
+      setTimeout(() => setLoading(false), 2000);
+    });
+    return () => {
+      window.removeEventListener("load", () => {
+        setTimeout(() => setLoading(false), 2000);
+      });
+    };
+  }, []);
   const accordianData: accordianType[] = [
     {
       id: 1,
@@ -72,6 +84,18 @@ function App() {
   };
 
   const [activeIndex, setActiveIndex] = useState(-1);
+  if (loading) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, transform: "translateY(8px)" }}
+        animate={{ opacity: 1, transform: "translateY(0px)" }}
+        transition={{ duration: 0.7, ease: "easeInOut" }}
+        className=" text-[18px] md:text-[24px] xl:text-[36px] text-darkgreen font-semibold tracking-tighter animate-pulse bg-lightgreen w-screen h-screen flex justify-center items-center"
+      >
+        Polishing your perfect skincare ritual
+      </motion.div>
+    );
+  }
   return (
     <div className="text-darkgreen  bg-white font-inter flex flex-col ">
       <div className="bg-lightgreen h-fit flex flex-col gap-[18px] md:gap-[24px] xl:gap-[56px]">
@@ -97,14 +121,18 @@ function App() {
             </p>
           </motion.div>
           <motion.div className="font-normal text-[20px] tracking-[-0.05em] flex gap-[20px] xl:gap-[30px] ">
-            <div>
-              <Bag></Bag>
+            <div className="flex gap-[4px] text-[14px] items-center">
+              <div className="p-[4px] bg-white rounded-4xl ">
+                <Bag></Bag>
+              </div>
+              <div className="hidden lg:block">Cart (1)</div>
             </div>
             {/* <p>Cart (1)</p> */}
-            <div>
+
+            <div className="p-[4px] bg-white rounded-4xl flex justify-center items-center">
               <Heart></Heart>
             </div>
-            <div>
+            <div className="p-[4px] bg-white rounded-4xl flex justify-center items-center">
               <Account></Account>
             </div>
           </motion.div>
@@ -128,6 +156,7 @@ function App() {
                 Transform your skincare routine with premium products that
                 restore, protect, and enhance your natural glow every day.
               </p>
+              {/* <AnimatedPara content="Transform your skincare routine with premium products that restore, protect, and enhance your natural glow every day." /> */}
             </div>
           </header>
           <div className="relative  ">
@@ -218,13 +247,14 @@ function App() {
             className=" h-fit items-center justify-between flex  px-[100px]"
           >
             {/* <div className="px-[40px] flex justify-between gap-16 items-center"> */}
-            <div className=" font-normal text-[16px] tracking-[-0.05em]">
+            <div className=" font-normal text-[16px] w-[450px] tracking-[-0.05em]">
               <p className="leading-[1.3]">
                 <span className="inline-block w-1/3"></span>
                 Transform your skincare
                 <br /> routine with premium products that
                 <br /> restore, protect, and enhance your natural <br />
                 glow every day.
+                {/* <AnimatedPara content="Transform your skincare routine with premium products that restore, protect, and enhance your natural glow every day." /> */}
               </p>
             </div>
             <div className="lg:w-[450px]   uppercase font-bold text-[70px] tracking-[-0.05em] leading-[0.76] ">
@@ -296,7 +326,7 @@ function App() {
         </div>
       </div>
 
-      <div className="mt-[56px] md:mt-[112px]   flex flex-col gap-[30px] px-[30px] xl:px-[100px] items-center md:mb-[36px] mb-[56px] xl:mb-[128px]">
+      <div className="text-[18px] xl:text-[28px] xl:tracking-wide font-normal  mt-[56px] md:mt-[112px]   flex flex-col gap-[30px] px-[30px] xl:px-[100px] items-center md:mb-[36px] mb-[56px] xl:mb-[128px]">
         {/* <p className=" text-[18px] xl:text-[28px] xl:tracking-wide font-normal ">
           Experience the ultimate in skincare with our expertly formulated
           products, crafted to nourish, protect, and rejuvenate your skin.
@@ -332,7 +362,10 @@ function App() {
             </div>
             <div className=" flex flex-col  gap-[24px] xl:gap-[48px]">
               <div className="flex gap-[30px]  md:gap-[64px] xl:gap-[24px]">
-                <div className="text-[34px] md:text-[60px]">02</div>
+                <div className="relative text-[34px] h-fit xl:w-[136px] md:text-[60px] ">
+                  01
+                  <span className="absolute inset-0 bg-gradient-to-t from-white  from-0% to-70% to-transparent w-full h-full"></span>
+                </div>
                 <div className="flex flex-col gap-[8px]">
                   <header className="text-[34px] md:text-[60px] tracking-tighter">
                     Bio Ingredients
@@ -344,7 +377,10 @@ function App() {
                 </div>
               </div>
               <div className="flex gap-[30px]  md:gap-[64px] xl:gap-[24px]">
-                <div className="text-[34px] md:text-[60px]">02</div>
+                <div className=" relative text-[34px] xl:w-[116px] h-fit w-fit md:text-[60px]">
+                  02
+                  <span className="absolute inset-0 bg-gradient-to-t from-white  from-0% to-70%  to-transparent w-full h-full"></span>
+                </div>
                 <div className="flex flex-col gap-[8px]">
                   <header className="text-[34px] md:text-[60px] tracking-tighter">
                     Everything Natural
@@ -356,7 +392,10 @@ function App() {
                 </div>
               </div>
               <div className="flex gap-[30px] md:gap-[64px] xl:gap-[24px]">
-                <div className="text-[34px] md:text-[60px]">03</div>
+                <div className="relative text-[34px] xl:w-[116px] h-fit w-fit md:text-[60px]">
+                  03
+                  <span className="absolute inset-0 bg-gradient-to-t from-0% to-70% from-white  to-transparent w-full h-full"></span>
+                </div>
                 <div className="flex flex-col gap-[8px]">
                   <header className="text-[34px] md:text-[60px] tracking-tighter">
                     All Handmade
@@ -447,17 +486,18 @@ function App() {
                   className=" aspect-3/4 rounded-2xl"
                   src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
                 ></img>
-                <div className="absolute w-full bottom-1/14 left-1/2">
-                  <div className="flex justify-center items-center gap-[16px] px-[8px] py-[8px] w-fit bg-lightgreen  rounded-4xl -translate-x-1/2">
-                    <div className="h-[50px] border rounded-4xl p-[0.5px] border-dashed border-darkgreen  aspect-square">
-                      <img
-                        className="rounded-4xl "
-                        src="images\bfa6cb471def1625f335564f2d78bc0748f6b64c.jpg"
-                      ></img>
+                <div className="px-[8px] md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                  <div className="xl:h-[72px] md:h-fit h-[60px] p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                    <div className="flex flex-col gap-[4px] xl:gap-[8px]">
+                      <div className="text-greyish text-[14px] md:text-[10px] xl:text-[14px] tracking-tighter">
+                        RITUAL OF SAKURA.
+                      </div>
+                      <div className="text-[12px] xl:text-[12px] md:text-[8px] text-neutral-500 tracking-tighter">
+                        FROM $19.99
+                      </div>
                     </div>
-                    <div className="text-[12px] mr-[8px]">
-                      While giving you an invigorating
-                      <br /> cleansing experience.
+                    <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                      <Cart />
                     </div>
                   </div>
                 </div>
@@ -467,17 +507,18 @@ function App() {
                   className=" rounded-2xl aspect-3/4"
                   src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
                 ></img>
-                <div className="absolute w-full bottom-1/14 left-1/2">
-                  <div className="flex justify-center items-center gap-[16px] px-[8px] py-[8px] w-fit bg-lightgreen  rounded-4xl -translate-x-1/2">
-                    <div className="h-[50px] border rounded-4xl p-[0.5px] border-dashed border-darkgreen  aspect-square">
-                      <img
-                        className="rounded-4xl "
-                        src="images\bfa6cb471def1625f335564f2d78bc0748f6b64c.jpg"
-                      ></img>
+                <div className="px-[8px] md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                  <div className="xl:h-[72px] md:h-fit h-[60px] p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                    <div className="flex flex-col gap-[4px] xl:gap-[8px]">
+                      <div className="text-greyish text-[14px] md:text-[10px] xl:text-[14px] tracking-tighter">
+                        THE BODY LOTION.
+                      </div>
+                      <div className="text-[12px] xl:text-[12px] md:text-[8px] text-neutral-500 tracking-tighter">
+                        FROM $19.99
+                      </div>
                     </div>
-                    <div className="text-[12px] mr-[8px]">
-                      While giving you an invigorating
-                      <br /> cleansing experience.
+                    <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                      <Cart />
                     </div>
                   </div>
                 </div>
@@ -487,17 +528,18 @@ function App() {
                   className=" aspect-3/4 rounded-2xl"
                   src="images\bfa6cb471def1625f335564f2d78bc0748f6b64c.jpg"
                 ></img>
-                <div className="absolute w-full bottom-1/14 left-1/2">
-                  <div className="flex justify-center items-center gap-[16px] px-[8px] py-[8px] w-fit bg-lightgreen  rounded-4xl -translate-x-1/2">
-                    <div className="h-[50px] border rounded-4xl p-[0.5px] border-dashed border-darkgreen  aspect-square">
-                      <img
-                        className="rounded-4xl "
-                        src="images\bfa6cb471def1625f335564f2d78bc0748f6b64c.jpg"
-                      ></img>
+                <div className="px-[8px] md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                  <div className="xl:h-[72px] md:h-fit h-[60px] p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                    <div className="flex flex-col gap-[4px] xl:gap-[8px]">
+                      <div className="text-greyish text-[14px] md:text-[10px] xl:text-[14px] tracking-tighter">
+                        ALYA SKIN CLEANSER.
+                      </div>
+                      <div className="text-[12px] xl:text-[12px] md:text-[8px] text-neutral-500 tracking-tighter">
+                        FROM $19.99
+                      </div>
                     </div>
-                    <div className="text-[12px] mr-[8px]">
-                      While giving you an invigorating
-                      <br /> cleansing experience.
+                    <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                      <Cart />
                     </div>
                   </div>
                 </div>
@@ -535,54 +577,189 @@ function App() {
                   className="aspect-2/3 rounded-2xl"
                   src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
                 ></img>
+                <div className="md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                  <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                    <div className="flex flex-col xl:gap-[8px]">
+                      <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
+                        THE BODY LOTION.
+                      </div>
+                      <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                        FROM $19.99
+                      </div>
+                    </div>
+                    <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                      <Cart />
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="relative w-1/13">
                 <img
                   className=" aspect-2/3 rounded-2xl"
                   src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
                 ></img>
+                <div className="md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                  <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                    <div className="flex flex-col xl:gap-[8px]">
+                      <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
+                        RITUAL OF SAKURA.
+                      </div>
+                      <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                        FROM $19.99
+                      </div>
+                    </div>
+                    <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                      <Cart />
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="relative w-1/13">
                 <img
                   className=" rounded-2xl"
                   src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
                 ></img>
+                <div className="md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                  <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                    <div className="flex flex-col xl:gap-[8px]">
+                      <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
+                        ALYA SKIN CLEANSER.
+                      </div>
+                      <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                        FROM $19.99
+                      </div>
+                    </div>
+                    <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                      <Cart />
+                    </div>
+                  </div>
+                </div>
+              </div>{" "}
+              <div className="relative w-1/13 ">
+                <img
+                  className="aspect-2/3 rounded-2xl"
+                  src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
+                ></img>
+                <div className="md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                  <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                    <div className="flex flex-col xl:gap-[8px]">
+                      <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
+                        THE BODY LOTION.
+                      </div>
+                      <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                        FROM $19.99
+                      </div>
+                    </div>
+                    <div className=" hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                      <Cart />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="relative w-1/13">
+                <img
+                  className=" rounded-2xl"
+                  src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
+                ></img>
+                <div className="md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                  <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                    <div className="flex flex-col xl:gap-[8px]">
+                      <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
+                        ALYA SKIN CLEANSER.
+                      </div>
+                      <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                        FROM $19.99
+                      </div>
+                    </div>
+                    <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                      <Cart />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="relative w-1/13">
+                <img
+                  className=" aspect-2/3 rounded-2xl"
+                  src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
+                ></img>
+                <div className="md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                  <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                    <div className="flex flex-col xl:gap-[8px]">
+                      <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
+                        RITUAL OF SAKURA.
+                      </div>
+                      <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                        FROM $19.99
+                      </div>
+                    </div>
+                    <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                      <Cart />
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="relative w-1/13 ">
                 <img
                   className="aspect-2/3 rounded-2xl"
                   src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
                 ></img>
+                <div className="md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                  <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                    <div className="flex flex-col xl:gap-[8px]">
+                      <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
+                        THE BODY LOTION.
+                      </div>
+                      <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                        FROM $19.99
+                      </div>
+                    </div>
+                    <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                      <Cart />
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="relative w-1/13">
                 <img
-                  className="aspect-2/3 rounded-2xl"
-                  src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
-                ></img>
-              </div>
-              <div className="relative w-1/13">
-                <img
-                  className=" aspect-2/3 rounded-2xl"
+                  className=" rounded-2xl"
                   src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
                 ></img>
-              </div>
-              <div className="relative w-1/13 ">
-                <img
-                  className="aspect-2/3 rounded-2xl"
-                  src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
-                ></img>
+                <div className="md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                  <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                    <div className="flex flex-col xl:gap-[8px]">
+                      <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
+                        ALYA SKIN CLEANSER.
+                      </div>
+                      <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                        FROM $19.99
+                      </div>
+                    </div>
+                    <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                      <Cart />
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="relative w-1/13">
                 <img
                   className=" aspect-2/3 rounded-2xl"
                   src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
                 ></img>
-              </div>
-              <div className="relative w-1/13">
-                <img
-                  className=" aspect-2/3 rounded-2xl"
-                  src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
-                ></img>
+                <div className="md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                  <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                    <div className="flex flex-col xl:gap-[8px]">
+                      <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
+                        RITUAL OF SAKURA.
+                      </div>
+                      <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                        FROM $19.99
+                      </div>
+                    </div>
+                    <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                      <Cart />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -654,72 +831,277 @@ function App() {
                   sectionIndex === 0 ? " flex" : " hidden"
                 } w-full  justify-around   transition-all duration-700 ease-in-out`}
               >
-                <img
-                  className="max-w-[360px] md:w-1/4  rounded-2xl"
-                  src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
-                ></img>
-                <img
-                  className="max-w-[360px] md:w-1/4 rounded-2xl"
-                  src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
-                ></img>
-                <img
-                  className="max-w-[360px] md:md:w-1/4 rounded-2xl"
-                  src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
-                ></img>
+                <div className="md:w-1/4 relative ">
+                  <img
+                    className="h-full w-full  rounded-2xl"
+                    src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
+                  ></img>
+                  <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                      <div className="flex flex-col xl:gap-[8px]">
+                        <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
+                          THE BODY LOTION.
+                        </div>
+                        <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                          FROM $19.99
+                        </div>
+                      </div>
+                      <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                        <Cart />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="md:w-1/4 relative ">
+                  <img
+                    className="h-full w-full  rounded-2xl"
+                    src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
+                  ></img>
+                  <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                      <div className="flex flex-col xl:gap-[8px]">
+                        <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
+                          ALSA SKIN CLEANSER
+                        </div>
+                        <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                          FROM $19.99
+                        </div>
+                      </div>
+                      <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                        <Cart />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="md:w-1/4 relative ">
+                  <img
+                    className="h-full w-full  rounded-2xl"
+                    src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
+                  ></img>
+                  <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                      <div className="flex flex-col xl:gap-[8px]">
+                        <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
+                          RITUAL OF SAKURA
+                        </div>
+                        <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                          FROM $19.99
+                        </div>
+                      </div>
+                      <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                        <Cart />
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div
                 className={`${
                   sectionIndex === 1 ? " flex" : " hidden"
                 } justify-around  transition-all duration-700 ease-in-out`}
               >
-                <img
-                  className="max-w-[360px] md:w-1/4  rounded-2xl"
-                  src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
-                ></img>
-                <img
-                  className="max-w-[360px] md:md:w-1/4 rounded-2xl"
-                  src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
-                ></img>
-                <img
-                  className="max-w-[360px] md:w-1/4 rounded-2xl"
-                  src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
-                ></img>
+                <div className="md:w-1/4 relative ">
+                  <img
+                    className="h-full w-full  rounded-2xl"
+                    src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
+                  ></img>
+                  <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                      <div className="flex flex-col xl:gap-[8px]">
+                        <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
+                          ALSA SKIN CLEANSER
+                        </div>
+                        <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                          FROM $19.99
+                        </div>
+                      </div>
+                      <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                        <Cart />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="md:w-1/4 relative ">
+                  <img
+                    className="h-full w-full  rounded-2xl"
+                    src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
+                  ></img>
+                  <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                      <div className="flex flex-col xl:gap-[8px]">
+                        <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
+                          THE BODY LOTION.
+                        </div>
+                        <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                          FROM $19.99
+                        </div>
+                      </div>
+                      <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                        <Cart />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="md:w-1/4 relative ">
+                  <img
+                    className="h-full w-full  rounded-2xl"
+                    src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
+                  ></img>
+                  <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                      <div className="flex flex-col xl:gap-[8px]">
+                        <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
+                          RITUAL OF SAKURA
+                        </div>
+                        <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                          FROM $19.99
+                        </div>
+                      </div>
+                      <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                        <Cart />
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div
                 className={`${
                   sectionIndex === 2 ? " flex" : " hidden"
                 }   justify-around  transition-all duration-700 ease-in-out`}
               >
-                <img
-                  className="max-w-[360px] md:w-1/4 rounded-2xl"
-                  src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
-                ></img>
-                <img
-                  className="max-w-[360px] md:w-1/4  rounded-2xl"
-                  src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
-                ></img>
-                <img
-                  className="max-w-[360px] md:md:w-1/4 rounded-2xl"
-                  src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
-                ></img>
+                <div className="md:w-1/4 relative ">
+                  <img
+                    className="h-full w-full  rounded-2xl"
+                    src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
+                  ></img>
+                  <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                      <div className="flex flex-col xl:gap-[8px]">
+                        <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
+                          THE BODY LOTION.
+                        </div>
+                        <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                          FROM $19.99
+                        </div>
+                      </div>
+                      <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                        <Cart />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="md:w-1/4 relative ">
+                  <img
+                    className="h-full w-full  rounded-2xl"
+                    src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
+                  ></img>
+                  <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                      <div className="flex flex-col xl:gap-[8px]">
+                        <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
+                          ALSA SKIN CLEANSER
+                        </div>
+                        <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                          FROM $19.99
+                        </div>
+                      </div>
+                      <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                        <Cart />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="md:w-1/4 relative ">
+                  <img
+                    className="h-full w-full  rounded-2xl"
+                    src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
+                  ></img>
+                  <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                      <div className="flex flex-col xl:gap-[8px]">
+                        <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
+                          RITUAL OF SAKURA
+                        </div>
+                        <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                          FROM $19.99
+                        </div>
+                      </div>
+                      <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                        <Cart />
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div
                 className={`${
                   sectionIndex === 3 ? "flex" : " hidden"
                 }  justify-around  transition-all duration-700 ease-in-out`}
               >
-                <img
-                  className="max-w-[360px] md:w-1/4 rounded-2xl"
-                  src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
-                ></img>
-                <img
-                  className="max-w-[360px] md:md:w-1/4 rounded-2xl"
-                  src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
-                ></img>
-                <img
-                  className="max-w-[360px] md:w-1/4  rounded-2xl"
-                  src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
-                ></img>
+                <div className="md:w-1/4 relative ">
+                  <img
+                    className="h-full w-full  rounded-2xl"
+                    src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
+                  ></img>
+                  <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                      <div className="flex flex-col xl:gap-[8px]">
+                        <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
+                          THE BODY LOTION.
+                        </div>
+                        <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                          FROM $19.99
+                        </div>
+                      </div>
+                      <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                        <Cart />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="md:w-1/4 relative ">
+                  <img
+                    className="h-full w-full  rounded-2xl"
+                    src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
+                  ></img>
+                  <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                      <div className="flex flex-col xl:gap-[8px]">
+                        <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
+                          RITUAL OF SAKURA
+                        </div>
+                        <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                          FROM $19.99
+                        </div>
+                      </div>
+                      <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                        <Cart />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="md:w-1/4 relative ">
+                  <img
+                    className="h-full w-full  rounded-2xl"
+                    src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
+                  ></img>
+                  <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                      <div className="flex flex-col xl:gap-[8px]">
+                        <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
+                          ALSA SKIN CLEANSER
+                        </div>
+                        <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                          FROM $19.99
+                        </div>
+                      </div>
+                      <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                        <Cart />
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="flex flex-col gap-[18px] md:hidden overflow-hidden">
@@ -734,18 +1116,69 @@ function App() {
                }
                  transition-all duration-600 ease-in-out`}
               >
-                <img
-                  className="w-1/4  rounded-2xl"
-                  src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
-                ></img>
-                <img
-                  className="w-1/4 rounded-2xl"
-                  src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
-                ></img>
-                <img
-                  className="w-1/4 rounded-2xl"
-                  src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
-                ></img>
+                <div className="relative w-1/4 h-fit">
+                  <img
+                    className="aspect-3/4 rounded-2xl"
+                    src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
+                  ></img>
+                  <div className="px-[8px] md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                    <div className="xl:h-[72px] md:h-fit h-[60px] p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                      <div className="flex flex-col gap-[4px] xl:gap-[8px]">
+                        <div className="text-greyish text-[14px] md:text-[10px] xl:text-[14px] tracking-tighter">
+                          RITUAL OF SAKURA.
+                        </div>
+                        <div className="text-[12px] xl:text-[12px] md:text-[8px] text-neutral-500 tracking-tighter">
+                          FROM $19.99
+                        </div>
+                      </div>
+                      <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                        <Cart />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="relative w-1/4 h-fit">
+                  <img
+                    className="aspect-3/4 rounded-2xl"
+                    src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
+                  ></img>
+                  <div className="px-[8px] md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                    <div className="xl:h-[72px] md:h-fit h-[60px] p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                      <div className="flex flex-col gap-[4px] xl:gap-[8px]">
+                        <div className="text-greyish text-[14px] md:text-[10px] xl:text-[14px] tracking-tighter">
+                          THE BODY LOTION.
+                        </div>
+                        <div className="text-[12px] xl:text-[12px] md:text-[8px] text-neutral-500 tracking-tighter">
+                          FROM $19.99
+                        </div>
+                      </div>
+                      <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                        <Cart />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="relative w-1/4 h-fit">
+                  <img
+                    className="aspect-3/4 rounded-2xl"
+                    src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
+                  ></img>
+                  <div className="px-[8px] md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                    <div className="xl:h-[72px] md:h-fit h-[60px] p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                      <div className="flex flex-col gap-[4px] xl:gap-[8px]">
+                        <div className="text-greyish text-[14px] md:text-[10px] xl:text-[14px] tracking-tighter">
+                          ALYA SKIN CLEANSER.
+                        </div>
+                        <div className="text-[12px] xl:text-[12px] md:text-[8px] text-neutral-500 tracking-tighter">
+                          FROM $19.99
+                        </div>
+                      </div>
+                      <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                        <Cart />
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className=" md:hidden w-full lg:w-fit flex justify-center  gap-[24px] md:gap-[12px] h-fit">
                 <div
@@ -790,7 +1223,14 @@ function App() {
                           value.id === activeIndex ? "gap-[16px]" : "gap-[0px]"
                         } transition-all duration-600`}
                       >
-                        <div className="text-[14px] md:text-[18px] font-regular">
+                        <div
+                          className="text-[14px] md:text-[18px] font-regular cursor-pointer"
+                          onClick={() =>
+                            setActiveIndex((prev) =>
+                              prev === value.id ? -1 : value.id
+                            )
+                          }
+                        >
                           {value.question}
                         </div>
                         <div
@@ -852,9 +1292,13 @@ function App() {
               Community Now
             </h1>
             <div className="flex justify-between text-[14px] md:text-[20px] tracking-tighter">
-              <button>Facebook</button>
-              <button>Instagram</button>
-              <button>Youtube</button>
+              <button className="hover:border-b cursor-pointer">
+                Facebook
+              </button>
+              <button className="hover:border-b cursor-pointer">
+                Instagram
+              </button>
+              <button className="hover:border-b cursor-pointer">Youtube</button>
             </div>
           </div>
 
@@ -869,13 +1313,20 @@ function App() {
             </div>
 
             <div className="flex justify-between text-[12px]  text-nowrap md:text-[20px] tracking-tighter ">
-              <button>Terms of Services</button>
-              <button> Privacy Policy</button>
-              <button>Cookies Policy</button>
+              <button className="hover:border-b cursor-pointer">
+                Terms of Services
+              </button>
+              <button className="hover:border-b cursor-pointer">
+                {" "}
+                Privacy Policy
+              </button>
+              <button className="hover:border-b cursor-pointer">
+                Cookies Policy
+              </button>
             </div>
           </div>
 
-          <div className="absolute -bottom-8 -left-4 md:-bottom-16 lg:-bottom-[140px] uppercase text-[90px] md:text-[170px] lg:text-[420px] font-black tracking-tighter opacity-10 leading-[1]">
+          <div className="pointer-events-none absolute -bottom-8 -left-4 md:-bottom-16 lg:-bottom-[140px] uppercase text-[90px] md:text-[170px] lg:text-[420px] font-black tracking-tighter opacity-10 leading-[1]">
             Skincare
           </div>
         </footer>

@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 export const AnimatedPara = ({ content }: { content: string }) => {
   const paraArray = content.split(" ");
   return (
-    <div className="flex gap-[6px] flex-wrap w-full text-[18px] xl:text-[28px] xl:tracking-wide font-normal  ">
+    <div className="flex gap-[6px] flex-wrap w-full  ">
       {paraArray.map((word, index) => {
         return (
           <motion.p
