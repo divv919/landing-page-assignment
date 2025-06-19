@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import { motion } from "motion/react";
 import {
@@ -24,14 +24,24 @@ interface accordianType {
 }
 function App() {
   const [loading, setLoading] = useState(true);
+  const timeoutRef = useRef<number>(null);
+  // useEffect(() => {
+  //   window.addEventListener("load", async () => {
+  //     setTimeout(() => setLoading(false), 2000);
+  //   });
+  //   return () => {
+  //     window.removeEventListener("load", () => {
+  //       setTimeout(() => setLoading(false), 2000);
+  //     });
+  //   };
+  // }, []);
   useEffect(() => {
-    window.addEventListener("load", async () => {
-      setTimeout(() => setLoading(false), 2000);
-    });
+    timeoutRef.current = setTimeout(() => setLoading(false), 2000);
+
     return () => {
-      window.removeEventListener("load", () => {
-        setTimeout(() => setLoading(false), 2000);
-      });
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
     };
   }, []);
   const accordianData: accordianType[] = [
