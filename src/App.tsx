@@ -16,6 +16,7 @@ import { Minus } from "./icons/Minus";
 import { Title } from "./components/Title";
 import { Button } from "./components/Button";
 import { AnimatedPara } from "./components/AnimatedPara";
+import { Image } from "./components/Image";
 interface accordianType {
   id: number;
   question: string;
@@ -167,17 +168,17 @@ function App() {
                 </div>
               </div>
               <div className="overflow-hidden absolute bottom-1/2 -translate-y-1/14 flex flex-col gap-10">
-                <img
+                <Image
                   className="w-[100%]"
                   src="images\eaf98c86e767898b5d5bf09e2afbcbba14d30f51.png"
                 />
                 <div className="absolute w-full bottom-1/14 left-1/2">
                   <div className="flex justify-center items-center gap-[16px] px-[8px] py-[8px] w-fit bg-lightgreen  rounded-4xl -translate-x-1/2">
                     <div className="h-[50px] border rounded-4xl p-[0.5px] border-dashed border-darkgreen  aspect-square">
-                      <img
+                      <Image
                         className="rounded-4xl "
                         src="images\bfa6cb471def1625f335564f2d78bc0748f6b64c.jpg"
-                      ></img>
+                      ></Image>
                     </div>
                     <div className="text-[14px] mr-[8px]">
                       While giving you an invigorating
@@ -188,10 +189,10 @@ function App() {
               </div>
               <div className="absolute top-1/2 translate-y-1/14">
                 <div className="relative overflow-hidden">
-                  <img
+                  <Image
                     className="w-[100%]"
                     src="images\bfa6cb471def1625f335564f2d78bc0748f6b64c.jpg"
-                  ></img>
+                  ></Image>
                 </div>
               </div>
             </div>
@@ -213,10 +214,10 @@ function App() {
                   restore, protect, and enhance your natural glow every day.
                 </p>
               </div>
-              <img
+              <Image
                 className="rounded-2xl w-[100%] max-h-[335px] aspect-square"
                 src="images\bfa6cb471def1625f335564f2d78bc0748f6b64c.jpg"
-              ></img>
+              ></Image>
             </div>
           </header>
           <div className="relative h-fit ">
@@ -227,7 +228,7 @@ function App() {
                 </div>
               </div>
               <div className="px-[40px] absolute top-0 flex w-full items-center  justify-between">
-                <img
+                <Image
                   className="w-[100%] max-w-[360px]  max-h-[400px]"
                   src="images\eaf98c86e767898b5d5bf09e2afbcbba14d30f51.png"
                 />
@@ -262,10 +263,10 @@ function App() {
               <p> Natur-</p>
               <p> ally</p>
             </div>
-            <img
+            <Image
               className="max-h-[160px] rounded-2xl aspect-square"
               src="images\bfa6cb471def1625f335564f2d78bc0748f6b64c.jpg"
-            ></img>
+            ></Image>
             {/* </div> */}
           </motion.header>
           <div className="flex flex-col gap-[54px]">
@@ -290,17 +291,17 @@ function App() {
                     viewport={{ once: true }}
                     className="relative"
                   >
-                    <img
+                    <Image
                       className="rounded-2xl  max-w-[350px]  max-h-[500px]"
                       src="images\eaf98c86e767898b5d5bf09e2afbcbba14d30f51.png"
                     />
                     <div className="absolute w-full bottom-1/14 left-1/2">
                       <div className="flex justify-center items-center gap-[16px] px-[8px] py-[8px] w-fit bg-lightgreen  rounded-4xl -translate-x-1/2">
                         <div className="h-[50px] border rounded-4xl p-[0.5px] border-dashed border-darkgreen  aspect-square">
-                          <img
+                          <Image
                             className="rounded-4xl "
                             src="images\bfa6cb471def1625f335564f2d78bc0748f6b64c.jpg"
-                          ></img>
+                          ></Image>
                         </div>
                         <div className="text-[14px] mr-[8px]">
                           While giving you an invigorating
@@ -411,10 +412,10 @@ function App() {
 
           <div className="flex flex-col gap-[4px] md:gap-[12px] xl:min-w-1/2">
             <div className="relative overflow-hidden">
-              <img
+              <Image
                 className="rounded-2xl"
                 src="images\5617a13221609fb0ba6cd721b235ba7e9b1ffa06.png"
-              ></img>
+              ></Image>
               <div className="absolute w-full bottom-1/14 left-1/2">
                 <div className="flex justify-center items-center gap-[16px] px-[8px] py-[8px] w-fit bg-lightgreen  rounded-4xl -translate-x-1/2">
                   <div className=" h-[50px] border rounded-4xl p-[0.5px] border-dashed border-darkgreen  aspect-square">
@@ -482,10 +483,10 @@ function App() {
                  transition-all duration-600 ease-in-out`}
             >
               <div className="w-1/4 relative">
-                <img
+                <Image
                   className=" aspect-3/4 rounded-2xl"
                   src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
-                ></img>
+                ></Image>
                 <div className="px-[8px] md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
                   <div className="xl:h-[72px] md:h-fit h-[60px] p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                     <div className="flex flex-col gap-[4px] xl:gap-[8px]">
@@ -503,10 +504,10 @@ function App() {
                 </div>
               </div>
               <div className="w-1/4 relative">
-                <img
+                <Image
                   className=" rounded-2xl aspect-3/4"
                   src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
-                ></img>
+                ></Image>
                 <div className="px-[8px] md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
                   <div className="xl:h-[72px] md:h-fit h-[60px] p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                     <div className="flex flex-col gap-[4px] xl:gap-[8px]">
@@ -524,10 +525,10 @@ function App() {
                 </div>
               </div>
               <div className="w-1/4 relative">
-                <img
+                <Image
                   className=" aspect-3/4 rounded-2xl"
                   src="images\bfa6cb471def1625f335564f2d78bc0748f6b64c.jpg"
-                ></img>
+                ></Image>
                 <div className="px-[8px] md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
                   <div className="xl:h-[72px] md:h-fit h-[60px] p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                     <div className="flex flex-col gap-[4px] xl:gap-[8px]">
@@ -573,10 +574,10 @@ function App() {
                  transition-all duration-600 ease-in-out`}
             >
               <div className="relative w-1/13 ">
-                <img
+                <Image
                   className="aspect-2/3 rounded-2xl"
                   src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
-                ></img>
+                ></Image>
                 <div className="md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
                   <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                     <div className="flex flex-col xl:gap-[8px]">
@@ -594,10 +595,10 @@ function App() {
                 </div>
               </div>
               <div className="relative w-1/13">
-                <img
+                <Image
                   className=" aspect-2/3 rounded-2xl"
                   src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
-                ></img>
+                ></Image>
                 <div className="md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
                   <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                     <div className="flex flex-col xl:gap-[8px]">
@@ -615,10 +616,10 @@ function App() {
                 </div>
               </div>
               <div className="relative w-1/13">
-                <img
+                <Image
                   className=" rounded-2xl"
                   src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
-                ></img>
+                ></Image>
                 <div className="md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
                   <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                     <div className="flex flex-col xl:gap-[8px]">
@@ -636,10 +637,10 @@ function App() {
                 </div>
               </div>{" "}
               <div className="relative w-1/13 ">
-                <img
+                <Image
                   className="aspect-2/3 rounded-2xl"
                   src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
-                ></img>
+                ></Image>
                 <div className="md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
                   <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                     <div className="flex flex-col xl:gap-[8px]">
@@ -657,10 +658,10 @@ function App() {
                 </div>
               </div>
               <div className="relative w-1/13">
-                <img
+                <Image
                   className=" rounded-2xl"
                   src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
-                ></img>
+                ></Image>
                 <div className="md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
                   <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                     <div className="flex flex-col xl:gap-[8px]">
@@ -678,10 +679,10 @@ function App() {
                 </div>
               </div>
               <div className="relative w-1/13">
-                <img
+                <Image
                   className=" aspect-2/3 rounded-2xl"
                   src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
-                ></img>
+                ></Image>
                 <div className="md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
                   <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                     <div className="flex flex-col xl:gap-[8px]">
@@ -699,10 +700,10 @@ function App() {
                 </div>
               </div>
               <div className="relative w-1/13 ">
-                <img
+                <Image
                   className="aspect-2/3 rounded-2xl"
                   src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
-                ></img>
+                ></Image>
                 <div className="md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
                   <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                     <div className="flex flex-col xl:gap-[8px]">
@@ -720,10 +721,10 @@ function App() {
                 </div>
               </div>
               <div className="relative w-1/13">
-                <img
+                <Image
                   className=" rounded-2xl"
                   src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
-                ></img>
+                ></Image>
                 <div className="md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
                   <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                     <div className="flex flex-col xl:gap-[8px]">
@@ -741,10 +742,10 @@ function App() {
                 </div>
               </div>
               <div className="relative w-1/13">
-                <img
+                <Image
                   className=" aspect-2/3 rounded-2xl"
                   src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
-                ></img>
+                ></Image>
                 <div className="md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
                   <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                     <div className="flex flex-col xl:gap-[8px]">
@@ -784,7 +785,7 @@ function App() {
               </button> */}
               <Button varient="secondary" text="Shop Now" />
             </div>
-            <img src="images\193c7506b5761ba24a86531417253435f11954cb.png" />
+            <Image src="images\193c7506b5761ba24a86531417253435f11954cb.png" />
           </div>
         </motion.div>
         <motion.div
@@ -832,10 +833,10 @@ function App() {
                 } w-full  justify-around   transition-all duration-700 ease-in-out`}
               >
                 <div className="md:w-1/4 relative ">
-                  <img
+                  <Image
                     className="h-full w-full  rounded-2xl"
                     src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
-                  ></img>
+                  ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
                     <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                       <div className="flex flex-col xl:gap-[8px]">
@@ -853,10 +854,10 @@ function App() {
                   </div>
                 </div>
                 <div className="md:w-1/4 relative ">
-                  <img
+                  <Image
                     className="h-full w-full  rounded-2xl"
                     src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
-                  ></img>
+                  ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
                     <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                       <div className="flex flex-col xl:gap-[8px]">
@@ -874,10 +875,10 @@ function App() {
                   </div>
                 </div>
                 <div className="md:w-1/4 relative ">
-                  <img
+                  <Image
                     className="h-full w-full  rounded-2xl"
                     src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
-                  ></img>
+                  ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
                     <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                       <div className="flex flex-col xl:gap-[8px]">
@@ -901,10 +902,10 @@ function App() {
                 } justify-around  transition-all duration-700 ease-in-out`}
               >
                 <div className="md:w-1/4 relative ">
-                  <img
+                  <Image
                     className="h-full w-full  rounded-2xl"
                     src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
-                  ></img>
+                  ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
                     <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                       <div className="flex flex-col xl:gap-[8px]">
@@ -922,10 +923,10 @@ function App() {
                   </div>
                 </div>
                 <div className="md:w-1/4 relative ">
-                  <img
+                  <Image
                     className="h-full w-full  rounded-2xl"
                     src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
-                  ></img>
+                  ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
                     <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                       <div className="flex flex-col xl:gap-[8px]">
@@ -943,10 +944,10 @@ function App() {
                   </div>
                 </div>
                 <div className="md:w-1/4 relative ">
-                  <img
+                  <Image
                     className="h-full w-full  rounded-2xl"
                     src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
-                  ></img>
+                  ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
                     <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                       <div className="flex flex-col xl:gap-[8px]">
@@ -970,10 +971,10 @@ function App() {
                 }   justify-around  transition-all duration-700 ease-in-out`}
               >
                 <div className="md:w-1/4 relative ">
-                  <img
+                  <Image
                     className="h-full w-full  rounded-2xl"
                     src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
-                  ></img>
+                  ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
                     <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                       <div className="flex flex-col xl:gap-[8px]">
@@ -992,10 +993,10 @@ function App() {
                 </div>
 
                 <div className="md:w-1/4 relative ">
-                  <img
+                  <Image
                     className="h-full w-full  rounded-2xl"
                     src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
-                  ></img>
+                  ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
                     <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                       <div className="flex flex-col xl:gap-[8px]">
@@ -1013,10 +1014,10 @@ function App() {
                   </div>
                 </div>
                 <div className="md:w-1/4 relative ">
-                  <img
+                  <Image
                     className="h-full w-full  rounded-2xl"
                     src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
-                  ></img>
+                  ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
                     <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                       <div className="flex flex-col xl:gap-[8px]">
@@ -1040,10 +1041,10 @@ function App() {
                 }  justify-around  transition-all duration-700 ease-in-out`}
               >
                 <div className="md:w-1/4 relative ">
-                  <img
+                  <Image
                     className="h-full w-full  rounded-2xl"
                     src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
-                  ></img>
+                  ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
                     <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                       <div className="flex flex-col xl:gap-[8px]">
@@ -1061,10 +1062,10 @@ function App() {
                   </div>
                 </div>
                 <div className="md:w-1/4 relative ">
-                  <img
+                  <Image
                     className="h-full w-full  rounded-2xl"
                     src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
-                  ></img>
+                  ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
                     <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                       <div className="flex flex-col xl:gap-[8px]">
@@ -1082,10 +1083,10 @@ function App() {
                   </div>
                 </div>
                 <div className="md:w-1/4 relative ">
-                  <img
+                  <Image
                     className="h-full w-full  rounded-2xl"
                     src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
-                  ></img>
+                  ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
                     <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                       <div className="flex flex-col xl:gap-[8px]">
@@ -1117,10 +1118,10 @@ function App() {
                  transition-all duration-600 ease-in-out`}
               >
                 <div className="relative w-1/4 h-fit">
-                  <img
+                  <Image
                     className="aspect-3/4 rounded-2xl"
                     src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
-                  ></img>
+                  ></Image>
                   <div className="px-[8px] md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
                     <div className="xl:h-[72px] md:h-fit h-[60px] p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                       <div className="flex flex-col gap-[4px] xl:gap-[8px]">
@@ -1138,10 +1139,10 @@ function App() {
                   </div>
                 </div>
                 <div className="relative w-1/4 h-fit">
-                  <img
+                  <Image
                     className="aspect-3/4 rounded-2xl"
                     src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
-                  ></img>
+                  ></Image>
                   <div className="px-[8px] md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
                     <div className="xl:h-[72px] md:h-fit h-[60px] p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                       <div className="flex flex-col gap-[4px] xl:gap-[8px]">
@@ -1159,10 +1160,10 @@ function App() {
                   </div>
                 </div>
                 <div className="relative w-1/4 h-fit">
-                  <img
+                  <Image
                     className="aspect-3/4 rounded-2xl"
                     src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
-                  ></img>
+                  ></Image>
                   <div className="px-[8px] md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
                     <div className="xl:h-[72px] md:h-fit h-[60px] p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                       <div className="flex flex-col gap-[4px] xl:gap-[8px]">
@@ -1266,10 +1267,10 @@ function App() {
             </div>
           </div>
           <div className="overflow-hidden lg:max-w-3/7 relative ">
-            <img
+            <Image
               className=" rounded-2xl"
               src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
-            ></img>
+            ></Image>
             <div className="absolute w-full bottom-1/14 left-1/2">
               <div className="flex justify-center items-center gap-[16px] px-[8px] py-[8px] w-fit bg-lightgreen  rounded-4xl -translate-x-1/2">
                 <div className=" h-[50px] border rounded-4xl p-[0.5px] border-dashed border-darkgreen  aspect-square">
