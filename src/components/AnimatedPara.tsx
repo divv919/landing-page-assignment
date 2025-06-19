@@ -7,7 +7,7 @@ export const AnimatedPara = ({ content }: { content: string }) => {
         return (
           <motion.p
             className="w-fit"
-            initial={{ opacity: 0.15 }}
+            initial={{ opacity: 0.3 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: index * 0.04, duration: 0.7 }}
             viewport={{ once: true }}

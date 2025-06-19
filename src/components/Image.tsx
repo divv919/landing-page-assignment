@@ -21,7 +21,6 @@ export const Image = ({
         onLoad={() => setLoading(false)}
         className={className}
       ></img>
-      ;
     </div>
   );
 };

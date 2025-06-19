@@ -200,7 +200,7 @@ function App() {
         </motion.div>
         <div className="hidden md:flex xl:hidden flex-col gap-[156px]">
           <header className="h-fit  relative flex flex-col gap-[20px]">
-            <div className="absolute -bottom-0 translate-y-1/2 w-full uppercase font-black text-[135px] tracking-[-0.05em] overflow-hidden ">
+            <div className="absolute z-20 bottom-5 translate-y-1/2 w-full uppercase font-black text-[135px] tracking-[-0.05em] overflow-hidden ">
               <div className=" flex flex-col gap-0 relative -left-[5px]">
                 <p className="leading-[0.76] ">Glowwww</p>
                 <p className="leading-[0.76] ">Naturally</p>
@@ -215,7 +215,7 @@ function App() {
                 </p>
               </div>
               <Image
-                className="rounded-2xl w-[100%] max-h-[335px] aspect-square"
+                className="rounded-2xl h-[335px] aspect-3/1"
                 src="images\bfa6cb471def1625f335564f2d78bc0748f6b64c.jpg"
               ></Image>
             </div>
@@ -487,13 +487,13 @@ function App() {
                   className=" aspect-3/4 rounded-2xl"
                   src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
                 ></Image>
-                <div className="px-[8px] md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                  <div className="xl:h-[72px] md:h-fit h-[60px] p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                <div className="px-[4px] md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                  <div className="xl:h-[72px] md:h-fit h-fit p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                     <div className="flex flex-col gap-[4px] xl:gap-[8px]">
-                      <div className="text-greyish text-[14px] md:text-[10px] xl:text-[14px] tracking-tighter">
+                      <div className="text-greyish text-[12px] md:text-[10px] xl:text-[14px] tracking-tighter">
                         RITUAL OF SAKURA.
                       </div>
-                      <div className="text-[12px] xl:text-[12px] md:text-[8px] text-neutral-500 tracking-tighter">
+                      <div className="text-[10px] xl:text-[8px] md:text-[8px] text-neutral-500 tracking-tighter">
                         FROM $19.99
                       </div>
                     </div>
@@ -508,13 +508,13 @@ function App() {
                   className=" rounded-2xl aspect-3/4"
                   src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
                 ></Image>
-                <div className="px-[8px] md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                  <div className="xl:h-[72px] md:h-fit h-[60px] p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                <div className="px-[4px] md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                  <div className="xl:h-[72px] md:h-fit h-fit p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                     <div className="flex flex-col gap-[4px] xl:gap-[8px]">
-                      <div className="text-greyish text-[14px] md:text-[10px] xl:text-[14px] tracking-tighter">
-                        THE BODY LOTION.
+                      <div className="text-greyish text-[12px] md:text-[10px] xl:text-[14px] tracking-tighter">
+                        RITUAL OF SAKURA.
                       </div>
-                      <div className="text-[12px] xl:text-[12px] md:text-[8px] text-neutral-500 tracking-tighter">
+                      <div className="text-[10px] xl:text-[8px] md:text-[8px] text-neutral-500 tracking-tighter">
                         FROM $19.99
                       </div>
                     </div>
@@ -529,13 +529,13 @@ function App() {
                   className=" aspect-3/4 rounded-2xl"
                   src="images\bfa6cb471def1625f335564f2d78bc0748f6b64c.jpg"
                 ></Image>
-                <div className="px-[8px] md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                  <div className="xl:h-[72px] md:h-fit h-[60px] p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                <div className="px-[4px] md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                  <div className="xl:h-[72px] md:h-fit h-fit p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                     <div className="flex flex-col gap-[4px] xl:gap-[8px]">
-                      <div className="text-greyish text-[14px] md:text-[10px] xl:text-[14px] tracking-tighter">
-                        ALYA SKIN CLEANSER.
+                      <div className="text-greyish text-[12px] md:text-[10px] xl:text-[14px] tracking-tighter">
+                        RITUAL OF SAKURA.
                       </div>
-                      <div className="text-[12px] xl:text-[12px] md:text-[8px] text-neutral-500 tracking-tighter">
+                      <div className="text-[10px] xl:text-[8px] md:text-[8px] text-neutral-500 tracking-tighter">
                         FROM $19.99
                       </div>
                     </div>
@@ -834,7 +834,7 @@ function App() {
               >
                 <div className="md:w-1/4 relative ">
                   <Image
-                    className="h-full w-full  rounded-2xl"
+                    className="aspect-3/5 rounded-2xl"
                     src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
                   ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
@@ -855,7 +855,7 @@ function App() {
                 </div>
                 <div className="md:w-1/4 relative ">
                   <Image
-                    className="h-full w-full  rounded-2xl"
+                    className="aspect-3/5 rounded-2xl"
                     src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
                   ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
@@ -876,7 +876,7 @@ function App() {
                 </div>
                 <div className="md:w-1/4 relative ">
                   <Image
-                    className="h-full w-full  rounded-2xl"
+                    className="aspect-3/5  rounded-2xl"
                     src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
                   ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
@@ -903,7 +903,7 @@ function App() {
               >
                 <div className="md:w-1/4 relative ">
                   <Image
-                    className="h-full w-full  rounded-2xl"
+                    className="aspect-3/5  rounded-2xl"
                     src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
                   ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
@@ -924,7 +924,7 @@ function App() {
                 </div>
                 <div className="md:w-1/4 relative ">
                   <Image
-                    className="h-full w-full  rounded-2xl"
+                    className="aspect-3/5 rounded-2xl"
                     src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
                   ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
@@ -945,7 +945,7 @@ function App() {
                 </div>
                 <div className="md:w-1/4 relative ">
                   <Image
-                    className="h-full w-full  rounded-2xl"
+                    className="aspect-3/5 rounded-2xl"
                     src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
                   ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
@@ -972,7 +972,7 @@ function App() {
               >
                 <div className="md:w-1/4 relative ">
                   <Image
-                    className="h-full w-full  rounded-2xl"
+                    className="aspect-3/5  rounded-2xl"
                     src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
                   ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
@@ -994,7 +994,7 @@ function App() {
 
                 <div className="md:w-1/4 relative ">
                   <Image
-                    className="h-full w-full  rounded-2xl"
+                    className="aspect-3/5 rounded-2xl"
                     src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
                   ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
@@ -1015,7 +1015,7 @@ function App() {
                 </div>
                 <div className="md:w-1/4 relative ">
                   <Image
-                    className="h-full w-full  rounded-2xl"
+                    className="aspect-3/5 rounded-2xl"
                     src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
                   ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
@@ -1042,7 +1042,7 @@ function App() {
               >
                 <div className="md:w-1/4 relative ">
                   <Image
-                    className="h-full w-full  rounded-2xl"
+                    className="aspect-3/5  rounded-2xl"
                     src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
                   ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
@@ -1063,7 +1063,7 @@ function App() {
                 </div>
                 <div className="md:w-1/4 relative ">
                   <Image
-                    className="h-full w-full  rounded-2xl"
+                    className="aspect-3/5  rounded-2xl"
                     src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
                   ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
@@ -1084,7 +1084,7 @@ function App() {
                 </div>
                 <div className="md:w-1/4 relative ">
                   <Image
-                    className="h-full w-full  rounded-2xl"
+                    className="aspect-3/5 rounded-2xl"
                     src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
                   ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
@@ -1122,13 +1122,13 @@ function App() {
                     className="aspect-3/4 rounded-2xl"
                     src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
                   ></Image>
-                  <div className="px-[8px] md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                    <div className="xl:h-[72px] md:h-fit h-[60px] p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                  <div className="px-[4px] md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                    <div className="xl:h-[72px] md:h-fit h-fit p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                       <div className="flex flex-col gap-[4px] xl:gap-[8px]">
-                        <div className="text-greyish text-[14px] md:text-[10px] xl:text-[14px] tracking-tighter">
+                        <div className="text-greyish text-[12px] md:text-[10px] xl:text-[14px] tracking-tighter">
                           RITUAL OF SAKURA.
                         </div>
-                        <div className="text-[12px] xl:text-[12px] md:text-[8px] text-neutral-500 tracking-tighter">
+                        <div className="text-[10px] xl:text-[8px] md:text-[8px] text-neutral-500 tracking-tighter">
                           FROM $19.99
                         </div>
                       </div>
@@ -1143,13 +1143,13 @@ function App() {
                     className="aspect-3/4 rounded-2xl"
                     src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
                   ></Image>
-                  <div className="px-[8px] md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                    <div className="xl:h-[72px] md:h-fit h-[60px] p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                  <div className="px-[4px] md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                    <div className="xl:h-[72px] md:h-fit h-fit p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                       <div className="flex flex-col gap-[4px] xl:gap-[8px]">
-                        <div className="text-greyish text-[14px] md:text-[10px] xl:text-[14px] tracking-tighter">
-                          THE BODY LOTION.
+                        <div className="text-greyish text-[12px] md:text-[10px] xl:text-[14px] tracking-tighter">
+                          RITUAL OF SAKURA.
                         </div>
-                        <div className="text-[12px] xl:text-[12px] md:text-[8px] text-neutral-500 tracking-tighter">
+                        <div className="text-[10px] xl:text-[8px] md:text-[8px] text-neutral-500 tracking-tighter">
                           FROM $19.99
                         </div>
                       </div>
@@ -1164,13 +1164,13 @@ function App() {
                     className="aspect-3/4 rounded-2xl"
                     src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
                   ></Image>
-                  <div className="px-[8px] md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                    <div className="xl:h-[72px] md:h-fit h-[60px] p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                  <div className="px-[4px] md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                    <div className="xl:h-[72px] md:h-fit h-fit p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
                       <div className="flex flex-col gap-[4px] xl:gap-[8px]">
-                        <div className="text-greyish text-[14px] md:text-[10px] xl:text-[14px] tracking-tighter">
-                          ALYA SKIN CLEANSER.
+                        <div className="text-greyish text-[12px] md:text-[10px] xl:text-[14px] tracking-tighter">
+                          RITUAL OF SAKURA.
                         </div>
-                        <div className="text-[12px] xl:text-[12px] md:text-[8px] text-neutral-500 tracking-tighter">
+                        <div className="text-[10px] xl:text-[8px] md:text-[8px] text-neutral-500 tracking-tighter">
                           FROM $19.99
                         </div>
                       </div>
