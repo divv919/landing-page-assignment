@@ -1,7 +1,7 @@
 export const Heart = () => {
   return (
     <svg
-      className="pb-[4px] h-[25px] aspect-square cursor-pointer transition-all duration-300 ease-in-out border-1 border-transparent hover:border-b-darkgreen "
+      className="pb-[4px] h-[25px] aspect-square cursor-pointer transition-all duration-300 ease-in-out "
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

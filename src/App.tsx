@@ -17,6 +17,9 @@ import { Title } from "./components/Title";
 import { Button } from "./components/Button";
 import { AnimatedPara } from "./components/AnimatedPara";
 import { Image } from "./components/Image";
+import { CartWhite } from "./icons/CartWhite";
+import { HoverLeftArrow } from "./icons/HoverLeftArrow";
+import { HoverRightArrow } from "./icons/HoverRightArrow";
 interface accordianType {
   id: number;
   question: string;
@@ -48,30 +51,35 @@ function App() {
     {
       id: 1,
       question: "Are your products safe for sensitive skin?",
-      answer: "Yes they are",
+      answer:
+        "Absolutely. Our products are formulated with gentle, dermatologically tested ingredients specifically suited for sensitive skin. However, we always recommend doing a patch test first.",
     },
     {
       id: 2,
       question: "Are your products cruelty-free?",
-      answer: "Yes they are",
+      answer:
+        "Yes, all our products are 100% cruelty-free. We never test on animals, and our ingredients are ethically sourced from suppliers who share our values.",
     },
     {
       id: 3,
       question: "What is your return policy?",
-      answer: "Yes they are",
+      answer:
+        "We offer a hassle-free 15-day return policy. If you're not satisfied with your purchase, you can return the product in its original condition for a full refund or exchange.",
     },
     {
       id: 4,
       question: "Do you ship internationally?",
-      answer: "Yes they are",
+      answer:
+        "Yes, we ship to most countries worldwide. Shipping fees and delivery times vary depending on the destination. You can view detailed information during checkout.",
     },
     {
       id: 5,
-      question: "How do i choose the right product?",
+      question: "How do I choose the right product?",
       answer:
-        "Yes they are Yes they areYes they areYes they areYes they areYes they areYes they areYes they areYes they areYes they areYes they areYes they areYes they are",
+        "Start by identifying your skin type and concerns (e.g., dryness, acne, sensitivity). You can use our product filters or consult our online quiz to find the best match. For personalized help, contact our support team.",
     },
   ];
+
   const [sectionIndex, setSectionIndex] = useState(0);
   const maxCarouselLength = 3;
   const [carouselIndex, setCarouselIndex] = useState(0);
@@ -110,7 +118,7 @@ function App() {
     );
   }
   return (
-    <div className="text-darkgreen  bg-white font-inter flex flex-col ">
+    <div className="text-darkgreen  bg-whitish font-inter flex flex-col ">
       <div className="bg-lightgreen h-fit flex flex-col gap-[18px] md:gap-[24px] xl:gap-[56px]">
         <motion.nav
           initial={{ transform: "translateY(8px)", opacity: 0 }}
@@ -134,18 +142,18 @@ function App() {
             </p>
           </motion.div>
           <motion.div className="font-normal text-[20px] tracking-[-0.05em] flex gap-[20px] xl:gap-[30px] ">
-            <div className="flex gap-[4px] text-[14px] items-center">
-              <div className="p-[4px] bg-white rounded-4xl ">
+            <div className="group cursor-pointer flex gap-[4px] text-[14px] items-center">
+              <div className="p-[4px] bg-whitish group-hover:bg-neutral-200 rounded-4xl ">
                 <Bag></Bag>
               </div>
-              <div className="hidden lg:block">Cart (1)</div>
+              <div className="hidden lg:block ">Cart (1)</div>
             </div>
             {/* <p>Cart (1)</p> */}
 
-            <div className="p-[4px] bg-white rounded-4xl flex justify-center items-center">
+            <div className="p-[4px] bg-whitish hover:bg-neutral-200 rounded-4xl flex justify-center items-center">
               <Heart></Heart>
             </div>
-            <div className="p-[4px] bg-white rounded-4xl flex justify-center items-center">
+            <div className="p-[4px] bg-whitish hover:bg-neutral-200 rounded-4xl flex justify-center items-center">
               <Account></Account>
             </div>
           </motion.div>
@@ -212,7 +220,7 @@ function App() {
         </motion.div>
         <div className="hidden md:flex xl:hidden flex-col gap-[156px]">
           <header className="h-fit  relative flex flex-col gap-[20px]">
-            <div className="absolute z-20 bottom-5 translate-y-1/2 w-full uppercase font-black text-[135px] tracking-[-0.05em] overflow-hidden ">
+            <div className="absolute z-20 bottom-0 translate-y-1/2 w-full uppercase font-black text-[135px] tracking-[-0.05em] overflow-hidden ">
               <div className=" flex flex-col gap-0 relative -left-[5px]">
                 <p className="leading-[0.76] ">Glowwww</p>
                 <p className="leading-[0.76] ">Naturally</p>
@@ -234,7 +242,7 @@ function App() {
           </header>
           <div className="relative h-fit ">
             <div className="relative h-120 w-screen ">
-              <div className=" absolute bottom-0  w-screen overflow-hidden ">
+              <div className=" absolute -bottom-4  w-screen overflow-hidden ">
                 <div className=" -mx-[12px] uppercase text-[170px] font-extrabold leading-[0.9]">
                   Skincare
                 </div>
@@ -244,9 +252,8 @@ function App() {
                   className="w-[100%] max-w-[360px]  max-h-[400px]"
                   src="images\eaf98c86e767898b5d5bf09e2afbcbba14d30f51.png"
                 />
-                <button className="border h-fit rounded-3xl w-fit px-[36px] py-[8px]">
-                  <p className="text-[16px]">Shop Now</p>
-                </button>
+                {/* <p className="text-[16px]">Shop Now</p> */}
+                <Button text="Shop Now" varient="primary" />
               </div>
             </div>
           </div>
@@ -349,7 +356,7 @@ function App() {
           ultimate in skincare with our expertly formulated products, crafted to
           nourish, protect, and rejuvenate your skin.
         </p> */}
-        <AnimatedPara content=" Experience the ultimate in skincare with our expertly formulated products, crafted to nourish, protect, and rejuvenate your skin. Combining the finest natural ingredients with advanced science, our collection ensures every skin type can achieve a radiant, healthy glow. Embrace your beauty with confidence every day. Experience the ultimate in skincare with our expertly formulated products, crafted to nourish, protect, and rejuvenate your skin." />
+        <AnimatedPara content="Experience the ultimate in skincare with our expertly formulated products, crafted to nourish, protect, and rejuvenate your skin. Combining the finest natural ingredients with advanced science, our collection ensures every skin type can achieve a radiant, healthy glow. Embrace your beauty with confidence every day. Experience the ultimate in skincare with our expertly formulated products, crafted to nourish, protect, and rejuvenate your skin." />
       </div>
       <article className="flex flex-col gap-[36p] md:gap-[50px]">
         <motion.div
@@ -359,8 +366,8 @@ function App() {
           viewport={{ once: true }}
           className="px-[30px]  flex flex-col gap-[56px] md:gap-[64px] xl:flex-row xl:px-[100px]"
         >
-          <div className="flex flex-col gap-[28px] md:gap-[36px] xl:gap-[76px]">
-            <div className=" flex flex-col gap-[28px] md:gap-[36px] xl:gap-[76px] ">
+          <div className="flex flex-col gap-[28px] md:gap-[36px] xl:gap-[44px]">
+            <div className=" flex flex-col gap-[28px] md:gap-[36px] xl:gap-[40px] ">
               <Title content="Why Our Products" />
               <div className="flex flex-col gap-[24px]">
                 <h1 className="font-normal text-[34px] md:text-[50px] tracking-tighter leading-[1.25]">
@@ -373,11 +380,11 @@ function App() {
                 </p>
               </div>
             </div>
-            <div className=" flex flex-col  gap-[24px] xl:gap-[48px]">
+            <div className=" flex flex-col  gap-[24px] xl:gap-[40px]">
               <div className="flex gap-[30px]  md:gap-[64px] xl:gap-[24px]">
                 <div className="relative text-[34px] h-fit xl:w-[136px] md:text-[60px] ">
                   01
-                  <span className="absolute inset-0 bg-gradient-to-t from-white  from-0% to-70% to-transparent w-full h-full"></span>
+                  <span className="absolute inset-0 bg-gradient-to-t from-whitish  from-0% to-70% to-transparent w-full h-full"></span>
                 </div>
                 <div className="flex flex-col gap-[8px]">
                   <header className="text-[34px] md:text-[60px] tracking-tighter">
@@ -392,7 +399,7 @@ function App() {
               <div className="flex gap-[30px]  md:gap-[64px] xl:gap-[24px]">
                 <div className=" relative text-[34px] xl:w-[116px] h-fit w-fit md:text-[60px]">
                   02
-                  <span className="absolute inset-0 bg-gradient-to-t from-white  from-0% to-70%  to-transparent w-full h-full"></span>
+                  <span className="absolute inset-0 bg-gradient-to-t from-whitish  from-0% to-70%  to-transparent w-full h-full"></span>
                 </div>
                 <div className="flex flex-col gap-[8px]">
                   <header className="text-[34px] md:text-[60px] tracking-tighter">
@@ -407,7 +414,7 @@ function App() {
               <div className="flex gap-[30px] md:gap-[64px] xl:gap-[24px]">
                 <div className="relative text-[34px] xl:w-[116px] h-fit w-fit md:text-[60px]">
                   03
-                  <span className="absolute inset-0 bg-gradient-to-t from-0% to-70% from-white  to-transparent w-full h-full"></span>
+                  <span className="absolute inset-0 bg-gradient-to-t from-0% to-70% from-whitish  to-transparent w-full h-full"></span>
                 </div>
                 <div className="flex flex-col gap-[8px]">
                   <header className="text-[34px] md:text-[60px] tracking-tighter">
@@ -466,18 +473,28 @@ function App() {
                 Skincare That Brings Out Your Natural Radiance
               </h1>
             </div>
-            <div className="hidden md:flex w-full lg:w-fit justify-center  gap-[16px] md:gap-[12px] h-fit">
+            <div className="hidden md:flex w-full lg:w-fit justify-center  gap-[16px] md:gap-[24px] h-fit">
               <div
-                className="max-w-[36px] md:max-w-[40px] xl:max-w-[60px]  aspect-square"
+                className="group cursor-pointer max-w-[36px] md:max-w-[40px] xl:max-w-[60px]  aspect-square"
                 onClick={handlePrev}
               >
-                <LeftFacingArrow />
+                <div className="block group-hover:hidden">
+                  <LeftFacingArrow />
+                </div>
+                <div className="hidden group-hover:block">
+                  <HoverLeftArrow />
+                </div>
               </div>
               <div
-                className="max-w-[36px] md:max-w-[40px] xl:max-w-[60px] aspect-square"
+                className="group cursor-pointer max-w-[36px] md:max-w-[40px] xl:max-w-[60px] aspect-square"
                 onClick={handleNext}
               >
-                <RightFacingArrow />
+                <div className="block group-hover:hidden">
+                  <RightFacingArrow />
+                </div>
+                <div className="hidden group-hover:block">
+                  <HoverRightArrow />
+                </div>
               </div>
             </div>
           </div>
@@ -500,17 +517,23 @@ function App() {
                   src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
                 ></Image>
                 <div className="px-[4px] md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                  <div className="xl:h-[72px] md:h-fit h-fit p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                  <div className="xl:h-[72px] md:h-fit h-fit p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-whitish rounded-md flex justify-between">
                     <div className="flex flex-col gap-[4px] xl:gap-[8px]">
                       <div className="text-greyish text-[12px] md:text-[10px] xl:text-[14px] tracking-tighter">
                         RITUAL OF SAKURA.
                       </div>
-                      <div className="text-[10px] xl:text-[8px] md:text-[8px] text-neutral-500 tracking-tighter">
+                      <div className="text-[10px] xl:text-[8px] md:text-[8px] text-darkgreen opacity-50 tracking-tighter">
                         FROM $19.99
                       </div>
                     </div>
-                    <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
-                      <Cart />
+                    <div className="group hover:bg-darkgreen cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                      <div className="block group-hover:hidden">
+                        <Cart />
+                      </div>
+
+                      <div className="hidden group-hover:block">
+                        <CartWhite />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -521,17 +544,23 @@ function App() {
                   src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
                 ></Image>
                 <div className="px-[4px] md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                  <div className="xl:h-[72px] md:h-fit h-fit p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                  <div className="xl:h-[72px] md:h-fit h-fit p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-whitish rounded-md flex justify-between">
                     <div className="flex flex-col gap-[4px] xl:gap-[8px]">
                       <div className="text-greyish text-[12px] md:text-[10px] xl:text-[14px] tracking-tighter">
                         RITUAL OF SAKURA.
                       </div>
-                      <div className="text-[10px] xl:text-[8px] md:text-[8px] text-neutral-500 tracking-tighter">
+                      <div className="text-[10px] xl:text-[8px] md:text-[8px] text-darkgreen opacity-50 tracking-tighter">
                         FROM $19.99
                       </div>
                     </div>
-                    <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
-                      <Cart />
+                    <div className="group hover:bg-darkgreen cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                      <div className="block group-hover:hidden">
+                        <Cart />
+                      </div>
+
+                      <div className="hidden group-hover:block">
+                        <CartWhite />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -542,17 +571,23 @@ function App() {
                   src="images\bfa6cb471def1625f335564f2d78bc0748f6b64c.jpg"
                 ></Image>
                 <div className="px-[4px] md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                  <div className="xl:h-[72px] md:h-fit h-fit p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                  <div className="xl:h-[72px] md:h-fit h-fit p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-whitish rounded-md flex justify-between">
                     <div className="flex flex-col gap-[4px] xl:gap-[8px]">
                       <div className="text-greyish text-[12px] md:text-[10px] xl:text-[14px] tracking-tighter">
                         RITUAL OF SAKURA.
                       </div>
-                      <div className="text-[10px] xl:text-[8px] md:text-[8px] text-neutral-500 tracking-tighter">
+                      <div className="text-[10px] xl:text-[8px] md:text-[8px] text-darkgreen opacity-50 tracking-tighter">
                         FROM $19.99
                       </div>
                     </div>
-                    <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
-                      <Cart />
+                    <div className="group hover:bg-darkgreen cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                      <div className="block group-hover:hidden">
+                        <Cart />
+                      </div>
+
+                      <div className="hidden group-hover:block">
+                        <CartWhite />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -561,16 +596,26 @@ function App() {
           </div>
           <div className="md:hidden w-full lg:w-fit flex justify-center  gap-[16px] md:gap-[12px] h-fit">
             <div
-              className="max-w-[36px] md:max-w-[40px] xl:max-w-[60px]  aspect-square"
+              className="group max-w-[36px] md:max-w-[40px] xl:max-w-[60px]  aspect-square"
               onClick={handlePrev}
             >
-              <LeftFacingArrow />
+              <div className="block group-hover:hidden">
+                <LeftFacingArrow />
+              </div>
+              <div className="hidden group-hover:block">
+                <HoverLeftArrow />
+              </div>
             </div>
             <div
               className="max-w-[36px] md:max-w-[40px] xl:max-w-[60px] aspect-square"
               onClick={handleNext}
             >
-              <RightFacingArrow />
+              <div className="block group-hover:hidden">
+                <RightFacingArrow />
+              </div>
+              <div className="hidden group-hover:block">
+                <HoverRightArrow />
+              </div>
             </div>
           </div>
           <div className="hidden md:block overflow-hidden">
@@ -591,17 +636,23 @@ function App() {
                   src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
                 ></Image>
                 <div className="md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                  <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                  <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-whitish rounded-md flex justify-between">
                     <div className="flex flex-col xl:gap-[8px]">
                       <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
                         THE BODY LOTION.
                       </div>
-                      <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                      <div className="xl:text-[12px] md:text-[8px] text-darkgreen opacity-50 tracking-tighter">
                         FROM $19.99
                       </div>
                     </div>
-                    <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
-                      <Cart />
+                    <div className="group hover:bg-darkgreen cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                      <div className="block group-hover:hidden">
+                        <Cart />
+                      </div>
+
+                      <div className="hidden group-hover:block">
+                        <CartWhite />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -612,17 +663,23 @@ function App() {
                   src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
                 ></Image>
                 <div className="md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                  <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                  <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-whitish rounded-md flex justify-between">
                     <div className="flex flex-col xl:gap-[8px]">
                       <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
                         RITUAL OF SAKURA.
                       </div>
-                      <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                      <div className="xl:text-[12px] md:text-[8px] text-darkgreen opacity-50 tracking-tighter">
                         FROM $19.99
                       </div>
                     </div>
-                    <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
-                      <Cart />
+                    <div className="group hover:bg-darkgreen cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                      <div className="block group-hover:hidden">
+                        <Cart />
+                      </div>
+
+                      <div className="hidden group-hover:block">
+                        <CartWhite />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -633,80 +690,23 @@ function App() {
                   src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
                 ></Image>
                 <div className="md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                  <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                  <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-whitish rounded-md flex justify-between">
                     <div className="flex flex-col xl:gap-[8px]">
                       <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
                         ALYA SKIN CLEANSER.
                       </div>
-                      <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                      <div className="xl:text-[12px] md:text-[8px] text-darkgreen opacity-50 tracking-tighter">
                         FROM $19.99
                       </div>
                     </div>
-                    <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
-                      <Cart />
-                    </div>
-                  </div>
-                </div>
-              </div>{" "}
-              <div className="relative w-1/13 ">
-                <Image
-                  className="aspect-2/3 rounded-2xl"
-                  src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
-                ></Image>
-                <div className="md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                  <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
-                    <div className="flex flex-col xl:gap-[8px]">
-                      <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
-                        THE BODY LOTION.
+                    <div className="group hover:bg-darkgreen cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                      <div className="block group-hover:hidden">
+                        <Cart />
                       </div>
-                      <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
-                        FROM $19.99
+
+                      <div className="hidden group-hover:block">
+                        <CartWhite />
                       </div>
-                    </div>
-                    <div className=" hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
-                      <Cart />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="relative w-1/13">
-                <Image
-                  className=" rounded-2xl"
-                  src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
-                ></Image>
-                <div className="md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                  <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
-                    <div className="flex flex-col xl:gap-[8px]">
-                      <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
-                        ALYA SKIN CLEANSER.
-                      </div>
-                      <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
-                        FROM $19.99
-                      </div>
-                    </div>
-                    <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
-                      <Cart />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="relative w-1/13">
-                <Image
-                  className=" aspect-2/3 rounded-2xl"
-                  src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
-                ></Image>
-                <div className="md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                  <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
-                    <div className="flex flex-col xl:gap-[8px]">
-                      <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
-                        RITUAL OF SAKURA.
-                      </div>
-                      <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
-                        FROM $19.99
-                      </div>
-                    </div>
-                    <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
-                      <Cart />
                     </div>
                   </div>
                 </div>
@@ -717,17 +717,23 @@ function App() {
                   src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
                 ></Image>
                 <div className="md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                  <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                  <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-whitish rounded-md flex justify-between">
                     <div className="flex flex-col xl:gap-[8px]">
                       <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
                         THE BODY LOTION.
                       </div>
-                      <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                      <div className="xl:text-[12px] md:text-[8px] text-darkgreen opacity-50 tracking-tighter">
                         FROM $19.99
                       </div>
                     </div>
-                    <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
-                      <Cart />
+                    <div className="group hover:bg-darkgreen cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                      <div className="block group-hover:hidden">
+                        <Cart />
+                      </div>
+
+                      <div className="hidden group-hover:block">
+                        <CartWhite />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -738,17 +744,23 @@ function App() {
                   src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
                 ></Image>
                 <div className="md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                  <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                  <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-whitish rounded-md flex justify-between">
                     <div className="flex flex-col xl:gap-[8px]">
                       <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
                         ALYA SKIN CLEANSER.
                       </div>
-                      <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                      <div className="xl:text-[12px] md:text-[8px] text-darkgreen opacity-50 tracking-tighter">
                         FROM $19.99
                       </div>
                     </div>
-                    <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
-                      <Cart />
+                    <div className="group hover:bg-darkgreen cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                      <div className="block group-hover:hidden">
+                        <Cart />
+                      </div>
+
+                      <div className="hidden group-hover:block">
+                        <CartWhite />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -759,17 +771,104 @@ function App() {
                   src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
                 ></Image>
                 <div className="md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                  <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                  <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-whitish rounded-md flex justify-between">
                     <div className="flex flex-col xl:gap-[8px]">
                       <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
                         RITUAL OF SAKURA.
                       </div>
-                      <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                      <div className="xl:text-[12px] md:text-[8px] text-darkgreen opacity-50 tracking-tighter">
                         FROM $19.99
                       </div>
                     </div>
-                    <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
-                      <Cart />
+                    <div className="group hover:bg-darkgreen cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                      <div className="block group-hover:hidden">
+                        <Cart />
+                      </div>
+
+                      <div className="hidden group-hover:block">
+                        <CartWhite />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="relative w-1/13 ">
+                <Image
+                  className="aspect-2/3 rounded-2xl"
+                  src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
+                ></Image>
+                <div className="md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                  <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-whitish rounded-md flex justify-between">
+                    <div className="flex flex-col xl:gap-[8px]">
+                      <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
+                        THE BODY LOTION.
+                      </div>
+                      <div className="xl:text-[12px] md:text-[8px] text-darkgreen opacity-50 tracking-tighter">
+                        FROM $19.99
+                      </div>
+                    </div>
+                    <div className="group hover:bg-darkgreen cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                      <div className="block group-hover:hidden">
+                        <Cart />
+                      </div>
+
+                      <div className="hidden group-hover:block">
+                        <CartWhite />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="relative w-1/13">
+                <Image
+                  className=" rounded-2xl"
+                  src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
+                ></Image>
+                <div className="md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                  <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-whitish rounded-md flex justify-between">
+                    <div className="flex flex-col xl:gap-[8px]">
+                      <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
+                        ALYA SKIN CLEANSER.
+                      </div>
+                      <div className="xl:text-[12px] md:text-[8px] text-darkgreen opacity-50 tracking-tighter">
+                        FROM $19.99
+                      </div>
+                    </div>
+                    <div className="group hover:bg-darkgreen cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                      <div className="block group-hover:hidden">
+                        <Cart />
+                      </div>
+
+                      <div className="hidden group-hover:block">
+                        <CartWhite />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="relative w-1/13">
+                <Image
+                  className=" aspect-2/3 rounded-2xl"
+                  src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
+                ></Image>
+                <div className="md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
+                  <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-whitish rounded-md flex justify-between">
+                    <div className="flex flex-col xl:gap-[8px]">
+                      <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
+                        RITUAL OF SAKURA.
+                      </div>
+                      <div className="xl:text-[12px] md:text-[8px] text-darkgreen opacity-50 tracking-tighter">
+                        FROM $19.99
+                      </div>
+                    </div>
+                    <div className="group hover:bg-darkgreen cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                      <div className="block group-hover:hidden">
+                        <Cart />
+                      </div>
+
+                      <div className="hidden group-hover:block">
+                        <CartWhite />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -785,8 +884,8 @@ function App() {
           className="relative hidden xl:block xl:px-[100px] "
         >
           <div className="rounded-2xl max-w-[1980px] overflow-hidden relative">
-            <div className="absolute  bg-gradient-to-b from-55% to-100% from-transparent  to-neutral-800 h-full w-full"></div>
-            <div className="absolute p-[54px] bottom-0 left-1/2 w-1/2 -translate-x-1/2 gap-[36px] flex flex-col justify-end items-center">
+            <div className="absolute z-10 bg-gradient-to-b from-55% to-100% from-transparent  to-neutral-800 h-full w-full"></div>
+            <div className="absolute z-10 p-[54px] bottom-0 left-1/2 w-1/2 -translate-x-1/2 gap-[36px] flex flex-col justify-end items-center">
               <h1 className="text-lightgreen text-[50px] leading-[1.25] xl:w-150 xl:text-center xl:wrap-normal">
                 Feel Beautiful Inside and Out with Every Product.
               </h1>
@@ -850,17 +949,23 @@ function App() {
                     src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
                   ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-whitish rounded-md flex justify-between">
                       <div className="flex flex-col xl:gap-[8px]">
                         <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
                           THE BODY LOTION.
                         </div>
-                        <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                        <div className="xl:text-[12px] md:text-[8px] text-darkgreen opacity-50 tracking-tighter">
                           FROM $19.99
                         </div>
                       </div>
-                      <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
-                        <Cart />
+                      <div className="group hover:bg-darkgreen cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                        <div className="block group-hover:hidden">
+                          <Cart />
+                        </div>
+
+                        <div className="hidden group-hover:block">
+                          <CartWhite />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -871,17 +976,23 @@ function App() {
                     src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
                   ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-whitish rounded-md flex justify-between">
                       <div className="flex flex-col xl:gap-[8px]">
                         <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
                           ALSA SKIN CLEANSER
                         </div>
-                        <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                        <div className="xl:text-[12px] md:text-[8px] text-darkgreen opacity-50 tracking-tighter">
                           FROM $19.99
                         </div>
                       </div>
-                      <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
-                        <Cart />
+                      <div className="group hover:bg-darkgreen cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                        <div className="block group-hover:hidden">
+                          <Cart />
+                        </div>
+
+                        <div className="hidden group-hover:block">
+                          <CartWhite />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -892,17 +1003,23 @@ function App() {
                     src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
                   ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-whitish rounded-md flex justify-between">
                       <div className="flex flex-col xl:gap-[8px]">
                         <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
                           RITUAL OF SAKURA
                         </div>
-                        <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                        <div className="xl:text-[12px] md:text-[8px] text-darkgreen opacity-50 tracking-tighter">
                           FROM $19.99
                         </div>
                       </div>
-                      <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
-                        <Cart />
+                      <div className="group hover:bg-darkgreen cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                        <div className="block group-hover:hidden">
+                          <Cart />
+                        </div>
+
+                        <div className="hidden group-hover:block">
+                          <CartWhite />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -919,17 +1036,23 @@ function App() {
                     src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
                   ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-whitish rounded-md flex justify-between">
                       <div className="flex flex-col xl:gap-[8px]">
                         <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
                           ALSA SKIN CLEANSER
                         </div>
-                        <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                        <div className="xl:text-[12px] md:text-[8px] text-darkgreen opacity-50 tracking-tighter">
                           FROM $19.99
                         </div>
                       </div>
-                      <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
-                        <Cart />
+                      <div className="group hover:bg-darkgreen cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                        <div className="block group-hover:hidden">
+                          <Cart />
+                        </div>
+
+                        <div className="hidden group-hover:block">
+                          <CartWhite />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -940,17 +1063,23 @@ function App() {
                     src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
                   ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-whitish rounded-md flex justify-between">
                       <div className="flex flex-col xl:gap-[8px]">
                         <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
                           THE BODY LOTION.
                         </div>
-                        <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                        <div className="xl:text-[12px] md:text-[8px] text-darkgreen opacity-50 tracking-tighter">
                           FROM $19.99
                         </div>
                       </div>
-                      <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
-                        <Cart />
+                      <div className="group hover:bg-darkgreen cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                        <div className="block group-hover:hidden">
+                          <Cart />
+                        </div>
+
+                        <div className="hidden group-hover:block">
+                          <CartWhite />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -961,17 +1090,23 @@ function App() {
                     src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
                   ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-whitish rounded-md flex justify-between">
                       <div className="flex flex-col xl:gap-[8px]">
                         <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
                           RITUAL OF SAKURA
                         </div>
-                        <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                        <div className="xl:text-[12px] md:text-[8px] text-darkgreen opacity-50 tracking-tighter">
                           FROM $19.99
                         </div>
                       </div>
-                      <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
-                        <Cart />
+                      <div className="group hover:bg-darkgreen cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                        <div className="block group-hover:hidden">
+                          <Cart />
+                        </div>
+
+                        <div className="hidden group-hover:block">
+                          <CartWhite />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -988,17 +1123,23 @@ function App() {
                     src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
                   ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-whitish rounded-md flex justify-between">
                       <div className="flex flex-col xl:gap-[8px]">
                         <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
                           THE BODY LOTION.
                         </div>
-                        <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                        <div className="xl:text-[12px] md:text-[8px] text-darkgreen opacity-50 tracking-tighter">
                           FROM $19.99
                         </div>
                       </div>
-                      <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
-                        <Cart />
+                      <div className="group hover:bg-darkgreen cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                        <div className="block group-hover:hidden">
+                          <Cart />
+                        </div>
+
+                        <div className="hidden group-hover:block">
+                          <CartWhite />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1010,17 +1151,23 @@ function App() {
                     src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
                   ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-whitish rounded-md flex justify-between">
                       <div className="flex flex-col xl:gap-[8px]">
                         <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
                           ALSA SKIN CLEANSER
                         </div>
-                        <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                        <div className="xl:text-[12px] md:text-[8px] text-darkgreen opacity-50 tracking-tighter">
                           FROM $19.99
                         </div>
                       </div>
-                      <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
-                        <Cart />
+                      <div className="group hover:bg-darkgreen cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                        <div className="block group-hover:hidden">
+                          <Cart />
+                        </div>
+
+                        <div className="hidden group-hover:block">
+                          <CartWhite />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1031,17 +1178,23 @@ function App() {
                     src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
                   ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-whitish rounded-md flex justify-between">
                       <div className="flex flex-col xl:gap-[8px]">
                         <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
                           RITUAL OF SAKURA
                         </div>
-                        <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                        <div className="xl:text-[12px] md:text-[8px] text-darkgreen opacity-50 tracking-tighter">
                           FROM $19.99
                         </div>
                       </div>
-                      <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
-                        <Cart />
+                      <div className="group hover:bg-darkgreen cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                        <div className="block group-hover:hidden">
+                          <Cart />
+                        </div>
+
+                        <div className="hidden group-hover:block">
+                          <CartWhite />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1058,17 +1211,23 @@ function App() {
                     src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
                   ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-whitish rounded-md flex justify-between">
                       <div className="flex flex-col xl:gap-[8px]">
                         <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
                           THE BODY LOTION.
                         </div>
-                        <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                        <div className="xl:text-[12px] md:text-[8px] text-darkgreen opacity-50 tracking-tighter">
                           FROM $19.99
                         </div>
                       </div>
-                      <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
-                        <Cart />
+                      <div className="group hover:bg-darkgreen cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                        <div className="block group-hover:hidden">
+                          <Cart />
+                        </div>
+
+                        <div className="hidden group-hover:block">
+                          <CartWhite />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1079,17 +1238,23 @@ function App() {
                     src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
                   ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-whitish rounded-md flex justify-between">
                       <div className="flex flex-col xl:gap-[8px]">
                         <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
                           RITUAL OF SAKURA
                         </div>
-                        <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                        <div className="xl:text-[12px] md:text-[8px] text-darkgreen opacity-50 tracking-tighter">
                           FROM $19.99
                         </div>
                       </div>
-                      <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
-                        <Cart />
+                      <div className="group hover:bg-darkgreen cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                        <div className="block group-hover:hidden">
+                          <Cart />
+                        </div>
+
+                        <div className="hidden group-hover:block">
+                          <CartWhite />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1100,17 +1265,23 @@ function App() {
                     src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
                   ></Image>
                   <div className="md:px-[8px] w xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                    <div className="xl:h-[72px] w-full md:p-[4px] xl:p-[8px]  bg-whitish rounded-md flex justify-between">
                       <div className="flex flex-col xl:gap-[8px]">
                         <div className="text-greyish md:text-[10px] xl:text-[14px] tracking-tighter">
                           ALSA SKIN CLEANSER
                         </div>
-                        <div className="xl:text-[12px] md:text-[8px] text-neutral-600 tracking-tighter">
+                        <div className="xl:text-[12px] md:text-[8px] text-darkgreen opacity-50tracking-tighter">
                           FROM $19.99
                         </div>
                       </div>
-                      <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
-                        <Cart />
+                      <div className="group hover:bg-darkgreen cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                        <div className="block group-hover:hidden">
+                          <Cart />
+                        </div>
+
+                        <div className="hidden group-hover:block">
+                          <CartWhite />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1135,17 +1306,23 @@ function App() {
                     src="images\fd338a13c8c498ae831bdf0de86301e74edb43f1.jpg"
                   ></Image>
                   <div className="px-[4px] md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                    <div className="xl:h-[72px] md:h-fit h-fit p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                    <div className="xl:h-[72px] md:h-fit h-fit p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-whitish rounded-md flex justify-between">
                       <div className="flex flex-col gap-[4px] xl:gap-[8px]">
                         <div className="text-greyish text-[12px] md:text-[10px] xl:text-[14px] tracking-tighter">
                           RITUAL OF SAKURA.
                         </div>
-                        <div className="text-[10px] xl:text-[8px] md:text-[8px] text-neutral-500 tracking-tighter">
+                        <div className="text-[10px] xl:text-[8px] md:text-[8px] text-darkgreen opacity-50 tracking-tighter">
                           FROM $19.99
                         </div>
                       </div>
-                      <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
-                        <Cart />
+                      <div className="group hover:bg-darkgreen cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                        <div className="block group-hover:hidden">
+                          <Cart />
+                        </div>
+
+                        <div className="hidden group-hover:block">
+                          <CartWhite />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1156,17 +1333,23 @@ function App() {
                     src="images\cdce7d5f9981ad9b73f089ab3f8cffccc4a6eb76.jpg"
                   ></Image>
                   <div className="px-[4px] md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                    <div className="xl:h-[72px] md:h-fit h-fit p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                    <div className="xl:h-[72px] md:h-fit h-fit p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-whitish rounded-md flex justify-between">
                       <div className="flex flex-col gap-[4px] xl:gap-[8px]">
                         <div className="text-greyish text-[12px] md:text-[10px] xl:text-[14px] tracking-tighter">
                           RITUAL OF SAKURA.
                         </div>
-                        <div className="text-[10px] xl:text-[8px] md:text-[8px] text-neutral-500 tracking-tighter">
+                        <div className="text-[10px] xl:text-[8px] md:text-[8px] text-darkgreen opacity-50 tracking-tighter">
                           FROM $19.99
                         </div>
                       </div>
-                      <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
-                        <Cart />
+                      <div className="group hover:bg-darkgreen cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                        <div className="block group-hover:hidden">
+                          <Cart />
+                        </div>
+
+                        <div className="hidden group-hover:block">
+                          <CartWhite />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1177,17 +1360,23 @@ function App() {
                     src="images\b5d506ba564dadaf25df9a99f7c08d02000e2a28.jpg"
                   ></Image>
                   <div className="px-[4px] md:px-[8px] xl:px-[12px] absolute w-full bottom-1/15 left-1/2 -translate-x-1/2  ">
-                    <div className="xl:h-[72px] md:h-fit h-fit p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-white rounded-md flex justify-between">
+                    <div className="xl:h-[72px] md:h-fit h-fit p-[6px] px-[10px] w-full md:p-[4px] xl:p-[8px]  bg-whitish rounded-md flex justify-between">
                       <div className="flex flex-col gap-[4px] xl:gap-[8px]">
                         <div className="text-greyish text-[12px] md:text-[10px] xl:text-[14px] tracking-tighter">
                           RITUAL OF SAKURA.
                         </div>
-                        <div className="text-[10px] xl:text-[8px] md:text-[8px] text-neutral-500 tracking-tighter">
+                        <div className="text-[10px] xl:text-[8px] md:text-[8px] text-darkgreen opacity-50 tracking-tighter">
                           FROM $19.99
                         </div>
                       </div>
-                      <div className="hover:bg-neutral-300 cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
-                        <Cart />
+                      <div className="group hover:bg-darkgreen cursor-pointer h-full rounded-md flex justify-center items-center aspect-square bg-neutral-200 p-[4px]">
+                        <div className="block group-hover:hidden">
+                          <Cart />
+                        </div>
+
+                        <div className="hidden group-hover:block">
+                          <CartWhite />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1230,20 +1419,20 @@ function App() {
               <div className=" top-0 left-0  h-fit w-full flex flex-col  gap-[12px] ">
                 {accordianData.map((value) => {
                   return (
-                    <div className="flex justify-between items-start border rounded-md p-[8px] md:p-[12px] lg:p-[16px]">
+                    <div
+                      className="flex justify-between items-start border rounded-md p-[8px] md:p-[12px] lg:p-[16px] hover:bg-lightgreen cursor-pointer "
+                      onClick={() =>
+                        setActiveIndex((prev) =>
+                          prev === value.id ? -1 : value.id
+                        )
+                      }
+                    >
                       <div
                         className={`flex flex-col ${
                           value.id === activeIndex ? "gap-[16px]" : "gap-[0px]"
-                        } transition-all duration-600`}
+                        } transition-all duration-600 `}
                       >
-                        <div
-                          className="text-[14px] md:text-[18px] font-regular cursor-pointer"
-                          onClick={() =>
-                            setActiveIndex((prev) =>
-                              prev === value.id ? -1 : value.id
-                            )
-                          }
-                        >
+                        <div className="text-[14px] md:text-[18px] font-regular cursor-pointer">
                           {value.question}
                         </div>
                         <div
@@ -1251,7 +1440,7 @@ function App() {
                             activeIndex === value.id
                               ? "max-h-[300px]"
                               : "max-h-[0px]"
-                          } transition-all duration-600 ease-in-out overflow-hidden text-[14px]`}
+                          } transition-all duration-600 ease-in-out overflow-hidden text-[14px] text-greyish`}
                         >
                           <p>{value.answer}</p>
                         </div>
@@ -1298,7 +1487,7 @@ function App() {
             </div>
           </div>
         </motion.div>
-        <footer className="h-fit lg:min-h-[600px] relative text-lightgreen bg-darkgreen p-[30px] pb-[100px]  flex flex-col lg:flex-row lg:justify-between gap-[56px] md:gap-[86px] lg:gap-[44px] overflow-hidden">
+        <footer className="h-fit lg:min-h-[600px] relative text-footer-font-color bg-darkgreen p-[30px] pb-[100px]  flex flex-col lg:flex-row lg:justify-between gap-[56px] md:gap-[86px] lg:gap-[44px] overflow-hidden">
           <div className="flex flex-col gap-[36px] md:gap-[48px] lg:gap-[60px] text-[34px] md:text-[50px] tracking-tight leading-[1.25]">
             <h1 className="lg:h-50">
               Join the Skincare <br />
@@ -1330,7 +1519,6 @@ function App() {
                 Terms of Services
               </button>
               <button className="hover:border-b cursor-pointer">
-                {" "}
                 Privacy Policy
               </button>
               <button className="hover:border-b cursor-pointer">
@@ -1339,7 +1527,7 @@ function App() {
             </div>
           </div>
 
-          <div className=" xl:font-bold pointer-events-none absolute -bottom-8 -left-4 md:-bottom-16 lg:-bottom-[140px] uppercase text-[90px] md:text-[170px] lg:text-[420px] font-black tracking-tighter  opacity-10 leading-[1]">
+          <div className=" xl:font-bold pointer-events-none absolute -bottom-8 -left-4 md:-bottom-16 lg:-bottom-[140px] uppercase text-[90px] md:text-[170px] lg:text-[420px] font-black tracking-tighter text-footer-big leading-[1]">
             Skincare
           </div>
         </footer>

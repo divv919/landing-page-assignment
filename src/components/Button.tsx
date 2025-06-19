@@ -1,7 +1,7 @@
 const secondaryStyles =
-  "border border-darkgreen bg-lightgreen hover:bg-darkgreen hover:text-lightgreen";
+  "border border-darkgreen bg-whitish hover:bg-darkgreen hover:text-lightgreen";
 const primaryStyles =
-  "border border-darkgreen bg-darkgreen text-lightgreen hover:border   hover:bg-black";
+  "border border-darkgreen bg-darkgreen text-whitish hover:border   hover:bg-black";
 export const Button = ({
   varient = "primary",
   text,
